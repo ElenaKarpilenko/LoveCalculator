@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.CalculatorFragment">
+
+    <LinearLayout
+        app:layout_constraintBottom_toTopOf="@id/calculateButton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        tools:ignore="ExtraText,NotSibling,UnknownId">
+
+        <ImageView
+            android:id="@+id/gifImageView"
+            android:layout_width="294dp"
+            android:layout_height="233dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription,MissingConstraints" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="@string/love_calculator"
+            android:textColor="@color/orange_point"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/firstNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/first_name"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/firstNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/you"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:minHeight="56dp"
+            android:padding="16dp"
+            android:textColorHint="#78909C"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            tools:ignore="VisualLintTextFieldSize" />
+
+        <!-- Текст для второго имени -->
+        <TextView
+            android:id="@+id/secondNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/second_name"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/secondNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="38dp"
+            android:layout_marginEnd="36dp"
+            android:hint="@string/me"
+            android:inputType="textPersonName"
+            android:minHeight="56dp"
+            android:padding="16dp"
+            android:textColorHint="#78909C"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            tools:ignore="VisualLintTextFieldSize" />
+
+        <Button
+            android:id="@+id/calculateButton"
+            android:layout_width="228dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/gray_point"
+            android:minHeight="48dp"
+            android:text="@string/calculate"
+            android:textColor="@android:color/white"
+            tools:ignore="MissingConstraints" />
+
+
+#Exclude everything
+*
+</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

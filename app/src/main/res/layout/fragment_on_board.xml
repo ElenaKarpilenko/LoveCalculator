@@ -9,4 +9,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/gray_point"
+        android:text="Start"
+        android:textColor="@color/orange_point"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
 </FrameLayout>

@@ -1,54 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.StartFragment">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:ignore="ExtraText">
 
-    <FrameLayout
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tv_start"
-        android:layout_width="match_parent"
-        android:layout_marginBottom="30dp"
-        android:layout_height="0dp">
+    <!-- GIF Image -->
+    <!-- Описание под GIF -->
 
-        <ImageView
-            android:id="@+id/img_start"
-            android:layout_width="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_love"
-            android:layout_height="match_parent"/>
-
-    </FrameLayout>
-
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="130dp"
-        android:text="@string/get_started"
-        android:textColor="@color/black"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="302dp"
+        android:layout_height="372dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="@string/first_name"
+        tools:srcCompat="@drawable/img" />
 
     <TextView
-        android:id="@+id/tv_start"
+        android:id="@+id/textViewDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/it_s_funs_and_many_more"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@id/btn_start"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="30dp"
-        />
+        android:layout_marginBottom="24dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
 
+    <!-- Кнопка для перехода на онбординг -->
+    <Button
+        android:id="@+id/buttonGetStarted"
+        android:layout_width="243dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
+        android:onClick="goToOnboarding"
+        android:padding="12dp"
+        android:textColor="@android:color/white" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
