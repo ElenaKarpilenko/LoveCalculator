@@ -2,12 +2,11 @@ package com.example.lovecalculator
 
 import android.app.Application
 import com.example.lovecalculator.data.api_servoce.LoveApiService
+import dagger.hilt.android.HiltAndroidApp
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+@HiltAndroidApp
 class App : Application() {
-    val api: LoveApiService = Retrofit.Builder()
-        .baseUrl("https://love-calculator.p.rapidapi.com/")
-        .addConverterFactory(GsonConverterFactory.create())
-        .build().create(LoveApiService::class.java)
+
 }

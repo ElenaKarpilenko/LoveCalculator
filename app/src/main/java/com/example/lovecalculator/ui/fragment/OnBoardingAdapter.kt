@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.lovecalculator.ui.fragment.OnBoardFragment
+import com.example.lovecalculator.ui.fragment.OnBoardPagingFragment.Companion.ARG_ONBOARD_POSITION
 
 class OnBoardingAdapter(
     fragment: Fragment,
@@ -16,8 +17,5 @@ class OnBoardingAdapter(
         arguments = Bundle().apply {
             putInt(ARG_ONBOARD_POSITION, position)
         }
-    }
-    companion object {
-        const val ARG_ONBOARD_POSITION = "onBoardPosition"
     }
 }

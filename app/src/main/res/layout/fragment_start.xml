@@ -9,8 +9,7 @@
     android:padding="16dp"
     tools:ignore="ExtraText">
 
-    <!-- GIF Image -->
-    <!-- Описание под GIF -->
+
 
     <ImageView
         android:id="@+id/img"
@@ -18,11 +17,12 @@
         android:layout_height="372dp"
         android:layout_marginBottom="32dp"
         android:contentDescription="@string/first_name"
-        tools:srcCompat="@drawable/img" />
+        tools:srcCompat="@drawable/img_1" />
 
     <TextView
         android:id="@+id/textViewDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
+        android:text="tttttyyyyy"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:textColor="@android:color/black"
@@ -32,10 +32,12 @@
     <Button
         android:id="@+id/buttonGetStarted"
         android:layout_width="243dp"
+        android:text="bbbbbbb"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/red"
         android:onClick="goToOnboarding"
         android:padding="12dp"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        tools:ignore="HardcodedText" />
 
 </LinearLayout>

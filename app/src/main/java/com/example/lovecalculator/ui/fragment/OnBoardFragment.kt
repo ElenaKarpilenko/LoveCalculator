@@ -1,58 +1,75 @@
 package com.example.lovecalculator.ui.fragment
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.lovecalculator.databinding.FragmentOnBoardBinding
+import androidx.core.view.isVisible
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.lovecalculator.R
+import com.example.lovecalculator.databinding.FragmentOnBoardBinding
+import com.example.lovecalculator.utis.Pref
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class OnBoardFragment : Fragment() {
 
-    private val binding by lazy {
-        FragmentOnBoardBinding.inflate(layoutInflater)
-    }
+    private lateinit var binding: FragmentOnBoardBinding
+
+    @Inject
+    lateinit var sharedPreferences: Pref
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return (binding.root)
+        binding = FragmentOnBoardBinding.inflate(inflater, container, false)
+        return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
         setupListener()
+        btnGetStarted()
     }
+
+
     private fun initialize() {
-        val viewPager2 = binding.viewPager2
-        binding.viewPager2.adapter = OnBoardingAdapter(this)
+        binding.viewPager2.adapter = OnBoardingAdapter(this@OnBoardFragment)
     }
+
 
     private fun setupListener() = with(binding.viewPager2) {
-        binding.viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                if (position == 3) {
-                    binding.startButton.visibility = View.VISIBLE
-                } else {
-                    binding.startButton.visibility = View.INVISIBLE
-
-                }
-            }
-        })
         binding.startButton.setOnClickListener {
-            if (currentItem < 4) {
-                setCurrentItem(currentItem + 3)
-            }
-        }
-        binding.startButton.setOnClickListener{
+            sharedPreferences.setOnboardingComplete(true)
             findNavController().navigate(R.id.startFragment)
         }
     }
+
+    private fun btnGetStarted() = with(binding) {
+        viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                when (position) {
+                    0 -> {
+                        startButton.isVisible = false
+                    }
+
+                    1 -> {
+                        startButton.isVisible = false
+                    }
+
+                    2 -> {
+                        startButton.isVisible = true
+                    }
+                }
+                super.onPageSelected(position)
+            }
+        })
+    }
+
 }

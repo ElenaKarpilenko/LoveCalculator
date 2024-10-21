@@ -5,68 +5,87 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Изображение с сердцем -->
     <ImageView
-        android:id="@+id/gifImageView"
-        android:layout_width="330dp"
-        android:layout_height="269dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="108dp"
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="384dp"
+        android:layout_marginTop="84dp"
+        android:src="@drawable/img"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.629"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:textColor="@color/red"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img"
+        tools:text="Have a good time" />
+
+    <TextView
+        android:id="@+id/tv_on"
+        android:layout_width="216dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/text1"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image"
         tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/point1"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginHorizontal="8dp"
+            android:src="@drawable/orange_point" />
+
+        <ImageView
+            android:id="@+id/point2"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginHorizontal="8dp"
+            android:src="@drawable/gray_point" />
+
+        <ImageView
+            android:id="@+id/point3"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginHorizontal="8dp"
+            android:src="@drawable/gray_point" />
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="256dp"
-        android:backgroundTint="@color/white"
-        android:contentDescription="@string/next_button_description"
-        android:text="@string/next"
-        android:textColor="#F335BD"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/indicator1"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="96dp"
-        android:contentDescription="@string/img_on_board"
-        android:src="@android:drawable/ic_notification_overlay"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/indicator2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/indicator2"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="96dp"
-        android:src="@android:drawable/ic_notification_overlay"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/indicator3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@id/indicator1" />
-
-    <ImageView
-        android:id="@+id/indicator3"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginBottom="96dp"
-        android:src="@android:drawable/ic_notification_overlay"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@id/indicator2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

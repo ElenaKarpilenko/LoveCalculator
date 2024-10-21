@@ -1,8 +1,9 @@
 package com.example.lovecalculator.utis
 
 import android.content.SharedPreferences
+import javax.inject.Inject
 
-class Pref(private val sharedPreferences: SharedPreferences) {
+class Pref @Inject constructor(private val sharedPreferences: SharedPreferences) {
 
     companion object {
         private const val SHOWN = "shown"
