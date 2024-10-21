@@ -9,7 +9,6 @@ import retrofit2.http.Query
 interface LoveApiService {
 
     @GET("getPercentage")
-
     fun fetchPercentage(
         @Query("fname") firstName: String,
         @Query("sname") secondName: String,

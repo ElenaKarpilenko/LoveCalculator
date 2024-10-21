@@ -1,35 +1,29 @@
 package com.example.lovecalculator.data
 
+import com.example.lovecalculator.App
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RegistrationPresenter(private val view: RegistrationView)  {
+class RegistrationPresenter(private val contract: RegistrationView.View): RegistrationView.Presenter {
 
-    fun calculatePercentage(firstName: String, secondName: String) {
-        view.showLoading()
-
-        LoveService.provideApi().fetchPercentage(
-            firstName = firstName,
+    override fun getPercentage(firstName: String, secondName: String) {
+        App().api.fetchPercentage(
+            key = "ef2a376a4fmsh5d299d7f68ef44bp156b9cjsn917023ff7c0a",
             host = "love-calculator.p.rapidapi.com",
-            key = "13db8c0c9fmsh0e8b65404615b3ap1035a5jsn85bfe5faab5c",
+            firstName = firstName,
             secondName = secondName
         ).enqueue(object : Callback<LoveModel> {
-            override fun onResponse(
-                call: Call<LoveModel>,
-                response: Response<LoveModel>
-            ) {
-                view.hideLoading()
-                if (response.isSuccessful && response.body() != null) {
-                    view.showSuccessResult(response.body()!!)
+            override fun onResponse(p0: Call<LoveModel>, p1: Response<LoveModel>) {
+                if (p1.isSuccessful && p1.body() != null) {
+                    contract.showResult(p1.body()!!)
                 } else {
-                    view.showError("Ошибка: ${response.message()}")
+                    contract.showError("Error : ${p1.message()}")
                 }
             }
 
-            override fun onFailure(call: Call<LoveModel>, t: Throwable) {
-                view.hideLoading()
-                view.showError("Ошибка сети: ${t.localizedMessage}")
+            override fun onFailure(p0: Call<LoveModel>, p1: Throwable) {
+                contract.showError("Failure: ${p1.message}")
             }
         })
     }

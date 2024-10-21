@@ -7,8 +7,8 @@ class LoveModel(
     val firstName: String,
     @SerializedName("sname")
     val secondName: String,
-    @SerializedName("Percentage")
-    val percentage :String,
+    @SerializedName("percentage")
+    val percentage :String? = null,
     @SerializedName("result")
-    val result :String
+    val result :String?
 )

@@ -22,15 +22,16 @@
         tools:layout="@layout/fragment_calculator">
         <action
             android:id="@+id/action_calculatorFragment_to_resultFragment"
-            app:destination="@id/resultFragment" />
+            app:destination="@id/resultFragment">
+        </action>
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.example.lovecalculator.ui.fragment.ResultFragment"
         android:label="ResultFragment">
-        <argument
-            android:name="percentage"
-            app:argType="string" />
-
     </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.lovecalculator.ui.fragment.HistoryFragment"
+        android:label="HistoryFragment" />
 </navigation>

@@ -7,15 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.example.lovecalculator.R
 import com.example.lovecalculator.data.LoveModel
 import com.example.lovecalculator.data.RegistrationPresenter
 import com.example.lovecalculator.data.RegistrationView
 import com.example.lovecalculator.databinding.FragmentCalculatorBinding
 
-class CalculatorFragment : Fragment(),RegistrationView {
+class CalculatorFragment : Fragment(), RegistrationView.View {
 
     private lateinit var binding: FragmentCalculatorBinding
-    private lateinit var presenter: RegistrationPresenter
+    private val presenter = RegistrationPresenter(this)
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,36 +29,30 @@ class CalculatorFragment : Fragment(),RegistrationView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter = RegistrationPresenter(this)
-
         binding.calculateButton.setOnClickListener {
             val firstName = binding.firstNameInput.text.toString()
             val secondName = binding.secondNameInput.text.toString()
 
-            presenter.calculatePercentage(firstName, secondName)
+            if (firstName.isBlank() || secondName.isBlank()) {
+                Toast.makeText(requireContext(), "Enter both names", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            presenter.getPercentage(firstName, secondName)
         }
     }
 
-    override fun showLoading() {
-        binding.calculateButton.visibility = View.VISIBLE
+    override fun showResult(result: LoveModel) {
+        val percentage = result.percentage?.toIntOrNull() ?: 0
+        val bundle = Bundle().apply {
+            putString("firstName", result.firstName)
+            putString("secondName", result.secondName)
+            putInt("percentage", percentage)
+        }
+        findNavController().navigate(R.id.action_calculatorFragment_to_resultFragment, bundle)
     }
 
-    override fun hideLoading() {
-        binding.calculateButton.visibility = View.GONE
-    }
-
-    override fun showSuccessResult(result: LoveModel) {
-        val action =  CalculatorFragmentDirections.actionCalculatorFragmentToResultFragment(
-            result.percentage.toString())
-        findNavController().navigate(action)
-    }
-
-    override fun showError(errorMessage: String) {
-        Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_LONG).show()
+    override fun showError(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 }
-
-
-
-
-
