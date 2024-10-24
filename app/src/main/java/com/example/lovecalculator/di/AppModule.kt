@@ -1,9 +1,9 @@
 package com.example.lovecalculator.di
 
-import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
-import com.example.lovecalculator.data.api_servoce.LoveApiService
+import com.example.lovecalculator.data.apiservice.LoveApiService
+import com.example.lovecalculator.data.pref.Pref
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,19 +15,8 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class AppModule {
+object ApplicationModule {
 
-    @Provides
-    @Singleton
-    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences {
-        return context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-    }
-
-    @Provides
-    @Singleton
-    fun provideSharedPreferencesHelper(sharedPreferences: SharedPreferences): SharedPreferences {
-        return sharedPreferences
-    }
 
     @Provides
     @Singleton
@@ -37,5 +26,19 @@ class AppModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(LoveApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences {
+        return context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+    }
+
+    @Provides
+    @Singleton
+    fun provideSharedPreferencesHelper(sharedPreferences: SharedPreferences): Pref {
+        return Pref(
+            sharedPreferences
+        )
     }
 }

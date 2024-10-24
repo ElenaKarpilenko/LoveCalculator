@@ -1,17 +1,17 @@
-package com.example.lovecalculator.ui.fragment
+package com.example.lovecalculator.view.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
-import androidx.navigation.findNavController
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.lovecalculator.R
+import com.example.lovecalculator.data.pref.Pref
 import com.example.lovecalculator.databinding.FragmentOnBoardBinding
-import com.example.lovecalculator.utis.Pref
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -45,6 +45,7 @@ class OnBoardFragment : Fragment() {
 
 
     private fun setupListener() = with(binding.viewPager2) {
+        Log.d("OnBoardFragment", "Button clicked")
         binding.startButton.setOnClickListener {
             sharedPreferences.setOnboardingComplete(true)
             findNavController().navigate(R.id.startFragment)

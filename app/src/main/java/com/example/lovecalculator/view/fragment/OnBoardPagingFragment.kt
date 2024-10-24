@@ -1,12 +1,14 @@
-package com.example.lovecalculator.ui.fragment
+package com.example.lovecalculator.view.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.lovecalculator.databinding.FragmentOnBoardPagingBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OnBoardPagingFragment : Fragment() {
 
     private lateinit var binding: FragmentOnBoardPagingBinding
@@ -25,21 +27,19 @@ class OnBoardPagingFragment : Fragment() {
     }
 
     private fun initialize() = with(binding) {
-        when (requireArguments().getInt(ARG_ONBOARD_POSITION)) {
+        val position = arguments?.getInt(ARG_ONBOARD_POSITION) ?: 0
+        when (position) {
             0 -> {
-                tvOn.text = "It`s Funs and many more"
+                tvOn.text = "It’s fun and many more"
             }
-
             1 -> {
-                tvOn.text = "Have a good time " +
-                        "You Should take the time to help those who need you"
+                tvOn.text = "Have a good time. You should take the time to help those who need you"
             }
-
             2 -> {
-                tvOn.text = "Cherishing love " +
-                        "It is now no longer possible for you to cherish love"
+                tvOn.text = "Cherishing love. It is now no longer possible for you to cherish love"
             }
         }
+
     }
 
     companion object {

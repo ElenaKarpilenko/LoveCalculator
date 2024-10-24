@@ -1,9 +1,9 @@
-package com.example.lovecalculator.ui.fragment
+package com.example.lovecalculator.view.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.lovecalculator.R
 import com.example.lovecalculator.databinding.FragmentStartBinding
@@ -24,7 +24,7 @@ class StartFragment : Fragment() {
     override fun onViewCreated(view: View1, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonGetStarted.setOnClickListener {
-            findNavController().navigate(R.id.onBoardFragment)
+            findNavController().navigate(R.id.calculatorFragment)
         }
     }
 }

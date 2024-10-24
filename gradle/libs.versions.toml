@@ -11,6 +11,8 @@ activity = "1.9.2"
 constraintlayout = "2.1.4"
 retrofit2 = "2.9.0"
 navigationFragmentKtx = "2.8.2"
+filamentAndroid = "1.17.1"
+leanback = "1.0.0"
 
 [libraries]
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
@@ -25,6 +27,8 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 retrofit2 = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit2" }
+filament-android = { group = "com.google.ar.sceneform", name = "filament-android", version.ref = "filamentAndroid" }
+androidx-leanback = { group = "androidx.leanback", name = "leanback", version.ref = "leanback" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

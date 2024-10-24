@@ -1,4 +1,4 @@
-package com.example.lovecalculator.utis
+package com.example.lovecalculator.data.pref
 
 import android.content.SharedPreferences
 import javax.inject.Inject

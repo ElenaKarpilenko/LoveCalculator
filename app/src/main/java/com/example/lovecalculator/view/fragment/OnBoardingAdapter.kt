@@ -1,10 +1,9 @@
-package com.example.lovecalculator.ui.fragment
+package com.example.lovecalculator.view.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.lovecalculator.ui.fragment.OnBoardFragment
-import com.example.lovecalculator.ui.fragment.OnBoardPagingFragment.Companion.ARG_ONBOARD_POSITION
+import com.example.lovecalculator.view.fragment.OnBoardPagingFragment.Companion.ARG_ONBOARD_POSITION
 
 class OnBoardingAdapter(
     fragment: Fragment,
