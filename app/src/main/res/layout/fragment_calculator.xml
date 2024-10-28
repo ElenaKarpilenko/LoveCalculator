@@ -106,14 +106,13 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigation"
             android:layout_width="330dp"
-            android:layout_height="wrap_content"
-
+            android:layout_height="71dp"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+
             app:itemBackground="@color/white"
-            app:itemIconTint="@color/red"
-            app:itemTextColor="@color/black"
-            app:menu="@menu/bottom_nav_menu" />
+            app:menu="@menu/bottom_nav_menu"
+            tools:ignore="MissingConstraints" />
+
     </LinearLayout>
 
 

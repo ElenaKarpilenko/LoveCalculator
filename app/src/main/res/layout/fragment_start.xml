@@ -16,7 +16,7 @@
         android:layout_height="372dp"
         android:layout_marginBottom="32dp"
         android:contentDescription="@string/first_name"
-        tools:srcCompat="@drawable/img_1" />
+        android:src="@drawable/img_1" />
 
     <TextView
         android:id="@+id/textViewDescription"

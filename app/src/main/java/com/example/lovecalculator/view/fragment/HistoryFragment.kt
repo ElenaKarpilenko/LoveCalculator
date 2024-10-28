@@ -55,6 +55,7 @@ class HistoryFragment : Fragment() {
         }
     }
 
+
     private fun showDeleteDialog(historyEntity: HistoryEntity) {
         val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.delete_dialog, null)
 
@@ -78,4 +79,6 @@ class HistoryFragment : Fragment() {
 
         builder.show()
     }
+
+
 }

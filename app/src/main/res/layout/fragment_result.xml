@@ -23,15 +23,15 @@
 
             <ImageView
                 android:id="@+id/iv_result_heart"
-                android:layout_gravity="center"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
+                android:layout_gravity="center"
                 android:src="@drawable/img_2" />
 
             <TextView
                 android:id="@+id/tv_you_result"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
                 android:layout_gravity="center"
                 android:text="@string/you"
                 android:textColor="@color/black"
@@ -95,7 +95,7 @@
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottomNavigation"
                 android:layout_width="330dp"
-                android:layout_height="wrap_content"
+                android:layout_height="57dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="50dp"
                 app:itemBackground="@color/white"
