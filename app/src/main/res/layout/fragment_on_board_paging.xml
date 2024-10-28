@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Изображение с сердцем -->
     <ImageView
         android:id="@+id/img"
         android:layout_width="match_parent"
@@ -14,7 +14,8 @@
         android:src="@drawable/img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
 
     <TextView
@@ -32,26 +33,26 @@
 
     <TextView
         android:id="@+id/tv_on"
-        android:layout_width="216dp"
-        android:layout_height="44dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/text1"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@id/image" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="124dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
@@ -59,33 +60,39 @@
             android:layout_width="10dp"
             android:layout_height="10dp"
             android:layout_marginHorizontal="8dp"
-            android:src="@drawable/orange_point" />
+            android:src="@drawable/orange_point"
+            tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/point2"
-            android:layout_width="10dp"
+            android:layout_width="wrap_content"
             android:layout_height="10dp"
             android:layout_marginHorizontal="8dp"
-            android:src="@drawable/gray_point" />
+            android:src="@drawable/gray_point"
+            tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/point3"
             android:layout_width="10dp"
             android:layout_height="10dp"
             android:layout_marginHorizontal="8dp"
-            android:src="@drawable/gray_point" />
+            android:src="@drawable/gray_point"
+            tools:ignore="ContentDescription" />
+
 
     </LinearLayout>
 
-
     <Button
-        android:id="@+id/btn_next"
-        android:layout_width="wrap_content"
+        android:id="@+id/buttonGetStarted"
+        android:layout_width="243dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_gravity="center|bottom"
+        android:backgroundTint="@color/red"
+        android:padding="12dp"
+        android:text="next"
+        android:textColor="@android:color/white"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="657dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

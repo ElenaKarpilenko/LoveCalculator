@@ -2,14 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/onBoardPagingFragment">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/calculatorFragment">
 
     <fragment
         android:id="@+id/startFragment"
         android:name="com.example.lovecalculator.view.fragment.StartFragment"
         android:label="fragment_start"
-        tools:layout="@layout/fragment_start" />
+        tools:layout="@layout/fragment_start"/>
     <fragment
         android:id="@+id/onBoardFragment"
         android:name="com.example.lovecalculator.view.fragment.OnBoardFragment"
@@ -27,15 +27,26 @@
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
+        tools:layout="@layout/fragment_result"
         android:name="com.example.lovecalculator.view.fragment.ResultFragment"
-        android:label="ResultFragment">
-    </fragment>
+        android:label="ResultFragment"/>
     <fragment
         android:id="@+id/historyFragment"
-
+        tools:layout="@layout/fragment_history"
+        android:name="com.example.lovecalculator.view.fragment.HistoryFragment"
+        android:label="HistoryFragment" />
+    <activity
+        android:id="@+id/mainActivity"
+        tools:layout="@layout/activity_main"
+        android:name="com.example.lovecalculator.view.MainActivity"
+        android:label="MainActivity" />
+    <fragment
+        android:id="@+id/historyFragment2"
+        android:name="com.example.lovecalculator.view.fragment.HistoryFragment"
         android:label="HistoryFragment" />
     <fragment
         android:id="@+id/onBoardPagingFragment"
+        tools:layout="@layout/fragment_on_board_paging"
         android:name="com.example.lovecalculator.view.fragment.OnBoardPagingFragment"
         android:label="OnBoardPagingFragment" />
 </navigation>

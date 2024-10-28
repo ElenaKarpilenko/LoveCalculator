@@ -50,7 +50,8 @@ dependencies {
     implementation( "com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
 
-
+    implementation ("androidx.recyclerview:recyclerview:1.2.1")
+    implementation ("com.google.android.material:material:1.4.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -70,12 +71,24 @@ dependencies {
     //Navigation
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
-
+    implementation( "androidx.room:room-runtime:2.6.1")
+    kapt( "androidx.room:room-compiler:2.6.1")
 
     //Navigation Components
     val navVersion = "2.7.7"
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.7.0")
+
+
+
+
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.0")
+
+
+
+
 
     // Dagger-Hilt
     implementation ("com.google.dagger:hilt-android:2.51.1")

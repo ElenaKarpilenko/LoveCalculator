@@ -2,8 +2,10 @@ package com.example.lovecalculator.di
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.room.Room
 import com.example.lovecalculator.data.apiservice.LoveApiService
 import com.example.lovecalculator.data.pref.Pref
+import com.example.lovecalculator.di.room.LoveDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +17,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object ApplicationModule {
+object AppModule {
 
 
     @Provides
@@ -40,5 +42,20 @@ object ApplicationModule {
         return Pref(
             sharedPreferences
         )
+    }
+    @Provides
+    @Singleton
+    fun provideDatabase(@ApplicationContext context: Context): LoveDataBase {
+        return Room.databaseBuilder(
+            context,
+            LoveDataBase::class.java,
+            "app_database"
+        ).allowMainThreadQueries().build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideHistoryDao(database: LoveDataBase): LoveDao {
+        return database.loveDao()
     }
 }

@@ -13,12 +13,12 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ResultFragment : Fragment() {
 
-    private lateinit var binding : FragmentResultBinding
+    private lateinit var binding: FragmentResultBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         binding = FragmentResultBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -29,15 +29,15 @@ class ResultFragment : Fragment() {
     }
 
     private fun fillData() = with(binding) {
-        val firstName = arguments?.getString("firstName")
-        val secondName = arguments?.getString("secondName")
-        val percentage = arguments?.getString("percentage")
+        val firstName = arguments?.getString("firstName") ?: "You"
+        val secondName = arguments?.getString("secondName") ?: "Me"
+        val percentage = arguments?.getString("percentage") ?: "0"
 
-        tvFirstName.text = firstName
-        tvSecondName.text = secondName
+        tvYouResult.text = firstName  // Используйте правильный идентификатор
+        tvMeResult.text = secondName   // Используйте правильный идентификатор
         scorePercent.text = "$percentage%"
 
-        buttonTryAgain.setOnClickListener {
+        btnTryAgain.setOnClickListener {  // Используйте правильный идентификатор для кнопки
             findNavController().navigate(R.id.historyFragment)
         }
     }

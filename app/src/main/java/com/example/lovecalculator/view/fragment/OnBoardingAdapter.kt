@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.lovecalculator.view.fragment.OnBoardPagingFragment.Companion.ARG_ONBOARD_POSITION
 
+
 class OnBoardingAdapter(
     fragment: Fragment,
 ) : FragmentStateAdapter(fragment) {

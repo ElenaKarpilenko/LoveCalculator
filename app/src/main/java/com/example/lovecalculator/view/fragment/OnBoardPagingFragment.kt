@@ -1,6 +1,7 @@
 package com.example.lovecalculator.view.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,7 +27,9 @@ class OnBoardPagingFragment : Fragment() {
         initialize()
     }
 
+
     private fun initialize() = with(binding) {
+        Log.d("onBoard","fghjk")
         val position = arguments?.getInt(ARG_ONBOARD_POSITION) ?: 0
         when (position) {
             0 -> {
