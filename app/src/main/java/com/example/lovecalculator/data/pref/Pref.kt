@@ -14,7 +14,7 @@ class Pref @Inject constructor(private val sharedPreferences: SharedPreferences)
     }
 
     fun setOnboardingComplete(b: Boolean) {
-        sharedPreferences.edit().putBoolean(SHOWN, true).apply()
+        sharedPreferences.edit().putBoolean(SHOWN, b).apply()
     }
 
 }

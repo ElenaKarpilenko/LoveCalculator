@@ -33,17 +33,32 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        tools:listitem="@layout/item_color"
         tools:ignore="UnknownId" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigation"
-        android:src="@drawable/icons8"
-        android:layout_width="330dp"
-        android:layout_gravity="center"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:itemBackground="@color/white"
-        app:itemIconTint="@color/orange_point"
-        app:itemTextColor="@color/red"
-        app:menu="@menu/bottom_nav_menu"
-        tools:ignore="MissingConstraints" />
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/icons8" />
+
+        <ImageView
+            android:id="@+id/img_history"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart = "20dp"
+            android:src="@drawable/icons" />
+
+    </LinearLayout>
+
+
+
 </LinearLayout>

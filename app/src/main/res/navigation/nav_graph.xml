@@ -29,7 +29,11 @@
         android:id="@+id/resultFragment"
         tools:layout="@layout/fragment_result"
         android:name="com.example.lovecalculator.view.fragment.ResultFragment"
-        android:label="ResultFragment"/>
+        android:label="ResultFragment">
+        <action
+            android:id="@+id/action_resultFragment_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+    </fragment>
     <fragment
         android:id="@+id/historyFragment"
         tools:layout="@layout/fragment_history"
@@ -49,4 +53,5 @@
         tools:layout="@layout/fragment_on_board_paging"
         android:name="com.example.lovecalculator.view.fragment.OnBoardPagingFragment"
         android:label="OnBoardPagingFragment" />
+    <fragment android:id="@+id/placeholder" />
 </navigation>

@@ -7,8 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/calculateButton"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,6 +18,7 @@
             android:id="@+id/img"
             android:layout_width="match_parent"
             android:layout_height="300dp"
+            android:layout_marginTop="16dp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/img_3"
             tools:ignore="MissingConstraints" />
@@ -63,7 +63,6 @@
             android:textStyle="italic"
             tools:ignore="VisualLintTextFieldSize" />
 
-        <!-- Текст для второго имени -->
         <TextView
             android:id="@+id/secondNameLabel"
             android:layout_width="wrap_content"
@@ -103,15 +102,30 @@
             android:textColor="@android:color/white"
             tools:ignore="MissingConstraints" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigation"
-            android:layout_width="330dp"
-            android:layout_height="71dp"
-            android:layout_gravity="center"
 
-            app:itemBackground="@color/white"
-            app:menu="@menu/bottom_nav_menu"
-            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/icons8" />
+
+        <ImageView
+            android:id="@+id/img_history"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart = "20dp"
+            android:src="@drawable/icons" />
 
     </LinearLayout>
 

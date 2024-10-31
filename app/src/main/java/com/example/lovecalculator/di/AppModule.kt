@@ -22,12 +22,18 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideLoveApiService(): LoveApiService {
+    fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://love-calculator.p.rapidapi.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(LoveApiService::class.java)
+    }
+    @Provides
+    @Singleton
+    fun provideLoveApiService(
+        retrofit: Retrofit
+    ): LoveApiService {
+        return retrofit.create(LoveApiService::class.java)
     }
 
     @Provides

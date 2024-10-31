@@ -44,7 +44,7 @@ class CalculatorFragment : Fragment() {
         }
     }
 
-    private fun initListener()  = with(binding) {
+    private fun initListener() = with(binding) {
         calculateButton.setOnClickListener {
             val firstName = firstNameInput.text.toString()
             val secondName = secondNameInput.text.toString()
@@ -58,10 +58,11 @@ class CalculatorFragment : Fragment() {
         }
 
     }
+
+
     private fun navigateToResultFragment(loveResult: LoveModel) {
         val bundle = Bundle().apply {
-            putString("percentage", loveResult.percentage)
-            putString("result", loveResult.result)
+            putSerializable("calc_result", loveResult)
         }
         findNavController().navigate(R.id.action_calculatorFragment_to_resultFragment, bundle)
     }

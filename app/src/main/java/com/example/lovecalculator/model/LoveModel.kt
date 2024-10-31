@@ -1,8 +1,7 @@
 package com.example.lovecalculator.model
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 class LoveModel(
     @SerializedName("fname")
@@ -13,4 +12,4 @@ class LoveModel(
     val percentage: String? = null,
     @SerializedName("result")
     val result: String?,
-)
+):Serializable
